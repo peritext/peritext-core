@@ -7,8 +7,14 @@
     "test": "node tests/index",
     "doc": "rm -rf documentation;doca init -i schemas -o documentation;cd documentation;npm install;npm run build;cd build;python -m SimpleHTTPServer"
   },
+  "precommit" : [ 
+    "npm run test" ,
+    "npm run doc",
+    "git add documentation"
+  ],
   "author": "Robin de Mourat",
   "license": "LGPL-3.0",
+  "repository": "https://github.com/peritext/peritext-core",
   "dependencies": {
     "json-schema-defaults": "^0.3.0",
     "json-schema-ref-parser": "^3.3.1",
@@ -16,6 +22,7 @@
   },
   "devDependencies": {
     "doca": "^0.3.0",
-    "expect": "^1.20.2"
+    "expect": "^1.20.2",
+    "precommit": "^1.2.2"
   }
 }
