@@ -1,0 +1,42 @@
+{
+    "id": "/contextualization.json",
+    "title": "Contextualization",
+    "description": "Contextualization used in a story",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties":
+    {
+        "id": {
+            "type": "string",
+            "pattern": "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"
+        },
+        "resourceId": {
+            "type": "string",
+            "pattern": "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"
+        },
+        "contextualizerId": {
+            "type": "string",
+            "pattern": "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"
+        },
+        "sectionId": {
+            "type": "string",
+            "description": "id of the section in which the contextualization is implemented (note: this is some sugar for implementation, as contextualization pointer in related section would suffice to link contextualizations and sections)",
+            "pattern": "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"
+        },
+        "type": {
+            "type": "string",
+            "description": "type of the contextualizer used (note: this is some sugar for implementation, and duplicated information with associated contextualizer)",
+            "default": ""
+        },
+        "title": {
+            "type": "string",
+            "description": "specific title of the contextualization",
+            "default": ""
+        },
+        "legend": {
+            "type": "string",
+            "default": ""
+        }
+    },
+    "required": ["id"]
+}

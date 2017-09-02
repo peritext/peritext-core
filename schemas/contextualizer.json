@@ -1,0 +1,21 @@
+{
+    "id": "/contextualizer.json",
+    "title": "Contextualizer",
+    "description": "Contextualizer used in a story",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties":
+    {
+        "id": {
+            "type": "string",
+            "pattern": "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"
+        },
+        "type": {
+            "type": "string"
+        },
+        "insertionType": {
+            "type": "string"
+        }
+    },
+    "required": ["id", "type", "insertionType"]
+}

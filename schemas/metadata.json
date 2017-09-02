@@ -1,0 +1,67 @@
+{
+  "id": "/metadata.json",
+  "title": "Generic metadata",
+  "description": "Generic metadata used to describe stories, sections and resources.",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Title of the item",
+      "default": ""
+    },
+    "subtitle": {
+      "type": "string",
+      "description": "Subtitle fo the item",
+      "default": ""
+    },
+    "authors": {
+      "type": "array",
+      "description": "authors of the item",
+      "default": [],
+      "items": {
+        "type": "object",
+        "properties": {
+          "given": {
+            "type": "string"
+          },
+          "family": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "type": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string",
+      "default": ""
+    },
+    "keywords": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": []
+    },
+    "covers": {
+      "type": "object",
+      "description": "cover urls of the item",
+      "default": {},
+      "properties": {
+        "web": {
+          "type": "string"
+        },
+        "codex": {
+          "type": "string"
+        }
+      }
+    },
+    "level": {
+      "type": "number",
+      "description": "level of hierarchy of the item",
+      "default": 0
+    }
+  }
+}

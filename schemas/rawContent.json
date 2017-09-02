@@ -1,0 +1,70 @@
+{
+  "type": "object",
+  "id": "/rawContent.json",
+  "title": "Draft raw content",
+  "description": "Draft-js editor represented in a serialized form (see https://draftjs.org/docs/api-reference-data-conversion. for more information)",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "properties": {
+    "entityMap": {
+      "type": "object",
+      "description": "List of entities annotating the contents",
+      "default": {},
+      "patternProperties": {
+        "^[a-zA-Z0-9]*$": {
+          "properties": {
+            "type": {
+              "type": "string",
+              "description": "Custom type of the entity (examples in peritext: INLINE_ASSET, BLOCK_ASSET, NOTE_POINTER)"
+            },
+            "mutability": {
+              "type": "string",
+              "description": "Whether the entity is editable in a draft-js editor"
+            },
+            "data": {
+              "type": "object",
+              "description": "data to embed in the entity"
+            }
+          }
+        }
+      }
+    },
+
+    "blocks": {
+      "type": "array",
+      "description": "List of contents blocks of the item",
+      "default": [],
+      "items": {
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "identifier of the block"
+          },
+          "text": {
+            "type": "string",
+            "description": "Text of the block"
+          },
+          "type": {
+            "type": "string",
+            "description": "Type of block (atomic, ...)"
+          },
+          "depth": {
+            "type": "number"
+          },
+          "inlineStyleRanges": {
+            "type": "array",
+            "description": "list of styling annotations"
+          },
+          "entityRanges": {
+            "type": "array",
+            "description": "List of entities mentions"
+          },
+          "data": {
+            "type": "object"
+          }
+        }
+      }
+    }
+
+  }
+}

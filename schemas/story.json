@@ -1,0 +1,163 @@
+{
+    "type": "object",
+    "id": "/story.json",
+    "title": "Story",
+    "description": "Peritext story",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties":
+    {
+        "id": {
+            "type": "string",
+            "description": "id of the story (uuid v4)",
+            "pattern": "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"
+        },
+
+        "metadata":
+        {
+            "$ref": "./metadata.json",
+            "description": "metadata describing the story"
+        },
+
+        "sections": 
+        {
+            "description": "hashmap of sections composing the story",
+            "type": "object",
+            "patternProperties": {
+                "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}": {
+                    "$ref": "./section.json"
+                }
+            }
+        },
+        "sectionsOrder": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "default": [],
+            "description": "array representing the order of the sections to display as summary/index"
+        },
+
+        "contextualizations": 
+        {
+            "type": "object",
+            "description": "hashmap of contextualizations used in the story",
+            "patternProperties": {
+                "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}": {
+                    "$ref": "./contextualization.json"
+                }
+            },
+            "default": {}
+        },
+
+        "contextualizers": 
+        {
+            "type": "object",
+            "description": "hashmap of contextualizers used in the story",
+            "patternProperties": {
+                "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}": {
+                    "$ref": "./contextualizer.json"
+                }
+            },
+            "default": {}
+        },
+
+        "resources": 
+        {
+            "type": "object",
+            "description": "hashmap of resources used in the story",
+            "patternProperties": {
+                "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}": {
+                    "$ref": "./resource.json"
+                }
+            },
+            "default": {}
+        },
+
+
+        "settings":
+        {
+            "type": "object",
+            "description": "settings describing how generators should display the story",
+            "properties": {
+                "templates": {
+                    "type": "object",
+                    "description": "rendering templates to use for generating document from the story",
+                    "properties": {
+                        "codex": {
+                            "type": "string"
+                        },
+                        "web": {
+                            "type": "string"
+                        }
+                    },
+                    "default": {
+                        "codex": "",
+                        "web": ""
+                    }
+                },
+                "css": {
+                    "type": "object",
+                    "description": "additional css stylesheets to use",
+                    "properties": {
+                        "all": {
+                            "type": "string"
+                        },
+                        "codex": {
+                            "type": "string"
+                        },
+                        "web": {
+                            "type": "string"
+                        }
+                    },
+                    "default": {
+                        "codex": "",
+                        "web": ""
+                    }
+                },
+                "options": {
+                    "type": "object",
+                    "description": "series of template-dependent rendering options",
+                    "default": {}
+                },
+                "citationLocale":
+                {
+                    "type": "object",
+                    "default": {},
+                    "properties": {
+                        "id": {
+                            "type": "string"
+                        },
+                        "names": {
+                            "type": "array"
+                        },
+                        "data": {
+                            "type": "string"
+                        }
+                    },
+                    "description": "CSL citation locale to use for rendering the story"
+                },
+                "citationStyle":
+                {
+                    "type": "object",
+                    "default": {},
+                    "properties": {
+                        "idUrl": {
+                            "type": "string"
+                        },
+                        "id": {
+                            "type": "string"
+                        },
+                        "title": {
+                            "type": "string"
+                        },
+                        "data": {
+                            "type": "string"
+                        }
+                    },
+                    "description": "CSL citation style to use for rendering the story"
+                }
+            }
+        }
+    },
+    "required": ["id"]
+}

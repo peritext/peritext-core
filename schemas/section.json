@@ -1,0 +1,66 @@
+{
+    "type": "object",
+    "id": "/section.json",
+    "title": "Section",
+    "description": "Section used in a story",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties":
+    {
+        "id": {
+            "type": "string",
+            "description": "id of the section (uuid v4)",
+            "pattern": "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"
+        },
+
+        "metadata":
+        {
+            "$ref": "./metadata.json",
+            "description": "metadata describing the section"
+        },
+
+        "contents":
+        {
+            "$ref": "./rawContent.json",
+            "description": "main contents of the section"
+        },
+
+        "notesOrder":
+        {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "description": "order of the notes to display in the section"
+        },
+
+        "notes":
+        {
+            "type": "object",
+            "description": "hashmap of notes commenting the main contents",
+            "patternProperties":
+            {
+                "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}":
+                {
+                    "type": "object",
+                    "properties":
+                    {
+                        "id": {
+                            "type": "string",
+                            "pattern": "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}",
+                            "description": "id of the note (uuid v4)"
+                        },
+                        "order": {
+                            "type": "number"
+                        },
+                        "editorState":
+                        {
+                            "description": "representation of the note content",
+                            "$ref": "./rawContent.json"
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
