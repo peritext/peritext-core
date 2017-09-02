@@ -30,6 +30,7 @@
             "items": {
                 "type": "string"
             },
+            "default": [],
             "description": "order of the notes to display in the section"
         },
 
