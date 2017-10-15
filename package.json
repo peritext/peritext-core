@@ -7,8 +7,8 @@
     "test": "node tests/index",
     "doc": "rm -rf documentation;doca init -i schemas -o documentation;cd documentation;npm install;npm run build;cd build;python -m SimpleHTTPServer"
   },
-  "precommit" : [ 
-    "npm run test" ,
+  "precommit": [
+    "npm run test",
     "npm run doc",
     "git add documentation"
   ],

@@ -4,22 +4,20 @@
     "title": "Story",
     "description": "Peritext story",
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "properties":
-    {
+    "properties": {
+
         "id": {
             "type": "string",
             "description": "id of the story (uuid v4)",
             "pattern": "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"
         },
 
-        "metadata":
-        {
+        "metadata": {
             "$ref": "./metadata.json",
             "description": "metadata describing the story"
         },
 
-        "sections": 
-        {
+        "sections": {
             "description": "hashmap of sections composing the story",
             "type": "object",
             "patternProperties": {
@@ -28,6 +26,7 @@
                 }
             }
         },
+
         "sectionsOrder": {
             "type": "array",
             "items": {
@@ -37,8 +36,7 @@
             "description": "array representing the order of the sections to display as summary/index"
         },
 
-        "contextualizations": 
-        {
+        "contextualizations": {
             "type": "object",
             "description": "hashmap of contextualizations used in the story",
             "patternProperties": {
@@ -49,8 +47,7 @@
             "default": {}
         },
 
-        "contextualizers": 
-        {
+        "contextualizers": {
             "type": "object",
             "description": "hashmap of contextualizers used in the story",
             "patternProperties": {
@@ -73,6 +70,17 @@
             "default": {}
         },
 
+        "datasets": 
+        {
+            "type": "object",
+            "description": "hashmap of datasets used in the story",
+            "patternProperties": {
+                "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}": {
+                    "$ref": "./dataset.json"
+                }
+            },
+            "default": {}
+        },
 
         "settings":
         {

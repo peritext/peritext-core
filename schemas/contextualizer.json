@@ -15,7 +15,17 @@
         },
         "insertionType": {
             "type": "string"
-        }
+        },
+        "visibility": {
+            "codex": {
+                "type": "boolean",
+                "default": true
+            },
+            "web": {
+                "type": "boolean",
+                "default": true
+            }
+        }    
     },
     "required": ["id", "type", "insertionType"]
 }

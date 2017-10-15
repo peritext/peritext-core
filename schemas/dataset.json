@@ -1,0 +1,36 @@
+{
+    "type": "object",
+    "id": "/dataset.json",
+    "title": "Section",
+    "description": "Dataset used in a story",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "id": {
+            "type": "string",
+            "description": "self-identifying id of the dataset (uuid v4)",
+            "pattern": "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"
+        },
+
+        "format": {
+            "type": "string",
+            "description": "The data format of the data of the dataset (json, xml, base64...)"
+        },
+
+        "method": {
+            "type": "string",
+            "description": "The method to use to retrieve the data ('raw', 'get', ...)"
+        },
+
+        "options": {
+            "type": "object",
+            "description": "retrieval method options (e.g. 'url')"
+        },
+
+        "data": {
+            "type": ["string", "object", "array"],
+            "description": "raw data of the dataset"
+        }
+
+    },
+    "required": ["id", "format", "method"]
+}

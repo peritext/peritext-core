@@ -4,6 +4,7 @@ var validateSection = require('../validators/validateSection');
 var validateResource = require('../validators/validateResource');
 var validateContextualization = require('../validators/validateContextualization');
 var validateContextualizer = require('../validators/validateContextualizer');
+var validateDataset = require('../validators/validateDataset');
 var validStories = [
   require('./validStories/story1')
 ];
@@ -46,6 +47,12 @@ Object.keys(validStory.contextualizations).forEach(function(id, index) {
   expect(validation.errors.length).toEqual(0);
 });
 
+Object.keys(validStory.datasets).forEach(function(id, index) {
+  const item = validStory.datasets[id];
+  console.info('evaluating valid dataset', index + 1);
+  const validation = validateDataset(item);
+  expect(validation.errors.length).toEqual(0);
+});
 
 var createResource = require('../seeders/createResource');
 console.log('creating a default resource');

@@ -9,6 +9,7 @@ export default fromJS([
   require('./getting-started.json'),
   require('../schemas/contextualization.json'),
   require('../schemas/contextualizer.json'),
+  require('../schemas/dataset.json'),
   require('../schemas/metadata.json'),
   require('../schemas/rawContent.json'),
   require('../schemas/resource.json'),
