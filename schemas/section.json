@@ -53,7 +53,7 @@
                         "order": {
                             "type": "number"
                         },
-                        "editorState":
+                        "contents":
                         {
                             "description": "representation of the note content",
                             "$ref": "./rawContent.json"
