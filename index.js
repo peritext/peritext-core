@@ -12,7 +12,7 @@ module.exports = {
   createSection: require('./seeders/createSection'),
   createDataset: require('./seeders/createDataset'),
   createResource: require('./seeders/createResource'),
-  createContextualization: require('./seederes/createContextualization'),
+  createContextualization: require('./seeders/createContextualization'),
   createContextualizer: require('./seeders/createContextualizer'),
 
   validateStory: require('./validators/validateStory'),
