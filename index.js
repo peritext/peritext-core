@@ -21,4 +21,6 @@ module.exports = {
   validateResource: require('./validators/validateResource'),
   validateContextualization: require('./validators/validateContextualization'),
   validateContextualizer: require('./validators/validateContextualizer'),
+
+  constants: require('./constants/constants')
 }
