@@ -7,7 +7,7 @@
     "test": "node tests/index",
     "doc": "rm -rf documentation;doca init -i schemas -o documentation;cd documentation;npm install;npm run build;cd build;python -m SimpleHTTPServer"
   },
-  "precommit": [
+  "pre-commit": [
     "npm run test",
     "npm run doc",
     "git add documentation"
@@ -23,6 +23,6 @@
   "devDependencies": {
     "doca": "^0.3.0",
     "expect": "^1.20.2",
-    "precommit": "^1.2.2"
+    "pre-commit": "^1.2.2"
   }
 }
