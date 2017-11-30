@@ -11,6 +11,11 @@
             "pattern": "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"
         },
 
+        "uri": {
+            "type": "string",
+            "description": "The uri where to find the data"
+        },
+
         "format": {
             "type": "string",
             "description": "The data format of the data of the dataset (json, xml, base64...)"
@@ -28,7 +33,7 @@
 
         "data": {
             "type": ["string", "object", "array"],
-            "description": "raw data of the dataset"
+            "description": "raw data of the dataset if any"
         }
 
     },
