@@ -1,0 +1,45 @@
+{
+  "id": "/metadata.json",
+  "title": "Template",
+  "description": "Template module metadata schema",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "required": true,
+      "descirption": "id of the template"
+    },
+    "name": {
+      "type": "string",
+      "required": true,
+      "descirption": "name of the template"
+    },
+    "type": {
+      "type": "string",
+      "required": true,
+      "description": "type of the module",
+      "enum": ["peritext-web-template", "peritext-codex-template"]
+    },
+    "options": {
+      "type": "array",
+      "description": "Options accepted by the template for customization",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "description": "type of the option",
+            "type": "boolean"
+          },
+          "id": {
+            "type": "string",
+            "description": "id of the option"
+          },
+          "title": {
+            "description": "label/title of the option represented as a map with languages as keys",
+            "type": "object"
+          }
+        }
+      }
+    }
+}

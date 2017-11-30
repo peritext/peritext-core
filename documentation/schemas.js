@@ -15,5 +15,6 @@ export default fromJS([
   require('../schemas/rawContent.json'),
   require('../schemas/resource.json'),
   require('../schemas/section.json'),
-  require('../schemas/story.json')
+  require('../schemas/story.json'),
+  require('../schemas/templatesModules/metadata.json')
 ]);
