@@ -4,7 +4,7 @@
   "description": "Peritext core schemas and validators",
   "main": "index.js",
   "scripts": {
-    "test": "node tests/index",
+    "test": "mocha tests",
     "doc": "rm -rf documentation;doca init -i schemas -o documentation;cd documentation;npm install;npm run build;cd ..",
     "git-add-doc": "git add documentation"
   },
@@ -24,6 +24,7 @@
   "devDependencies": {
     "doca": "^0.3.0",
     "expect": "^1.20.2",
+    "mocha": "^4.0.1",
     "pre-commit": "^1.2.2"
   }
 }
