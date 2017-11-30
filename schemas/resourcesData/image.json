@@ -1,0 +1,14 @@
+{
+    "type": "object",
+    "id": "/image.json",
+    "title": "Image",
+    "description": "Image resources' data model",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "imageDataset": {
+            "type": "string",
+            "description": "dataset id (uuid v4) for the image resource",
+            "pattern": "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"
+        }
+    }
+}

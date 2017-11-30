@@ -28,19 +28,19 @@
         "properties": {
           "inlineStatic": {
             "type": "boolean",
-            "required": true,
+            "required": true
           },
           "blockStatic": {
             "type": "boolean",
-            "required": true,
+            "required": true
           },
           "inlineDynamic": {
             "type": "boolean",
-            "required": true,
+            "required": true
           },
           "blockDynamic": {
             "type": "boolean",
-            "required": true,
+            "required": true
           }
         }
       },

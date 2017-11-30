@@ -1,0 +1,17 @@
+{
+    "type": "object",
+    "id": "/glossary.json",
+    "title": "Glossary",
+    "description": "Glossary resources' data model",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "name of the glossary entity"
+        },
+        "type": {
+            "type": "string",
+            "description": "type of the glossary entity"
+        }     
+    }
+}

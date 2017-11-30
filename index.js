@@ -6,7 +6,12 @@ module.exports = {
     contextualizer:  require('./schemas/contextualizer'),
     rawContent:  require('./schemas/rawContent'),
     section:  require('./schemas/section'),
-    story:  require('./schemas/story')
+    story:  require('./schemas/story'),
+
+    resourcesData: require('./schemas/resourcesData'),
+
+    contextualizerModulesMetadata: require('./schemas/contextualizerModules/metadata'),
+    templateModulesMetadata: require('./schemas/templateModules/metadata')
   },
   createStory: require('./seeders/createStory'),
   createSection: require('./seeders/createSection'),

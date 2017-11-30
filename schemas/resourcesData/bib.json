@@ -1,0 +1,9 @@
+{
+    "type": "object",
+    "id": "/bib.json",
+    "title": "Bib",
+    "description": "Bibliographic resources' data model",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+    }
+}

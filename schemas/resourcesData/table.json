@@ -1,0 +1,14 @@
+{
+    "type": "object",
+    "id": "/table.json",
+    "title": "Table",
+    "description": "Table resources' data model",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "dataset": {
+            "type": "string",
+            "description": "dataset id (uuid v4) for the table resource",
+            "pattern": "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"
+        }
+    }
+}

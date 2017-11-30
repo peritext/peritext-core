@@ -1,0 +1,18 @@
+{
+    "type": "object",
+    "id": "/webpage.json",
+    "title": "Webpage",
+    "description": "Webpage resources' data model",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "thumbnailDataset": {
+            "type": "string",
+            "description": "thumbnail dataset id (uuid v4) for the resource",
+            "pattern": "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"
+        },
+        "url": {
+            "type": "string",
+            "description": "url of the webpage to display in block mode (can be different from the metadata's one)"
+        }
+    }
+}

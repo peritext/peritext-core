@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "id": "/codefiles.json",
+    "title": "Code files",
+    "description": "Code files resources' data model",
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "code": {
+            "type": "object",
+            "description": "hashmap of the code files to represent"
+        }
+    }
+}
