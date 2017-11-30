@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "node tests/index",
-    "doc": "rm -rf documentation;doca init -i schemas -o documentation;cd documentation;npm install;npm run build;cd build;python -m SimpleHTTPServer"
+    "doc": "rm -rf documentation;doca init -i schemas -o documentation;cd documentation;npm install;npm run build;cd ..",
+    "git-add-doc": "git add documentation"
   },
   "pre-commit": [
-    "npm run test",
-    "npm run doc",
-    "git add documentation"
+    "test",
+    "doc",
+    "git-add-doc"
   ],
   "author": "Robin de Mourat",
   "license": "LGPL-3.0",
