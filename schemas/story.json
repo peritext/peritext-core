@@ -107,19 +107,44 @@
                     "type": "object",
                     "description": "additional css stylesheets to use",
                     "properties": {
-                        "all": {
-                            "type": "string"
-                        },
                         "codex": {
-                            "type": "string"
+                            "type": "object",
+                            "properties": {
+                                "css": {
+                                    "type": "string",
+                                    "definition": "css code to apply"
+                                },
+                                "mode": {
+                                    "type": "string",
+                                    "definition": "whether to replace or merge with existing template-provided css code",
+                                    "enum": ["merge", "replace"]
+                                }
+                            }
                         },
                         "web": {
-                            "type": "string"
+                            "type": "object",
+                            "properties": {
+                                "css": {
+                                    "type": "string",
+                                    "definition": "css code to apply"
+                                },
+                                "mode": {
+                                    "type": "string",
+                                    "definition": "whether to replace or merge with existing template-provided css code",
+                                    "enum": ["merge", "replace"]
+                                }
+                            }
                         }
                     },
                     "default": {
-                        "codex": "",
-                        "web": ""
+                        "codex": {
+                            "css": "",
+                            "mode": "merge"
+                        },
+                        "web": {
+                            "css": "",
+                            "mode": "merge"
+                        }
                     }
                 },
                 "options": {
