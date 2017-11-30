@@ -1,0 +1,97 @@
+{
+  "id": "/metadata.json",
+  "title": "Contextualizer module metadata",
+  "description": "Metadata of a peritext contextualizer",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "type": {
+        "type": "string",
+        "description": "Module type",
+        "default": "peritext-contextualizer",
+        "required": true
+      },
+      "id": {
+        "type": "string",
+        "description": "Id of the contextualizer module (e.g. 'image')",
+        "required": true
+      },
+      "name": {
+        "type": "string",
+        "description": "Name of the contextualizer module",
+        "required": true
+      },
+      "coverage": {
+        "type": "object",
+        "required": true,
+        "description": "The use cases coverage of the contextualizer module accross implementation types and output types",
+        "properties": {
+          "inlineStatic": {
+            "type": "boolean",
+            "required": true,
+          },
+          "blockStatic": {
+            "type": "boolean",
+            "required": true,
+          },
+          "inlineDynamic": {
+            "type": "boolean",
+            "required": true,
+          },
+          "blockDynamic": {
+            "type": "boolean",
+            "required": true,
+          }
+        }
+      },
+      "model": {
+        "type": "object",
+        "description": "The model of the contextualizer module",
+        "required": true,
+        "properties": {
+          "acceptedResourceTypes": {
+            "type": "array",
+            "required": true,
+            "description": "An array of objects representing requirements that may be fullfiled to accept a resource (can be a 'type' string prop or a 'validate' function prop)"
+          },
+          "block": {
+            "type": "object",
+            "description": "Special options for block contextualizations",
+            "properties": {
+              "expandable": {
+                "type": "boolean",
+                "description": "Whether the block contextualizations are elligeable for full screen display"
+              },
+              "options": {
+                "type": "array",
+                "description": "a list of options available for contextualizations.",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "description": "the id of the option"
+                    },
+                    "type": {
+                      "type": "string",
+                      "description": "type of option (input, jsonInput, select, imageUrl, number, ... tbd)"
+                    },
+                    "title": {
+                      "type": "object",
+                      "description": "The title of the option in several languages"
+                    },
+                    "placeholder": {
+                      "type": "object",
+                      "description": "The placeholder/help text of the option in several languages"
+                    }
+
+                  }
+
+                }
+              }
+            }
+          }
+        }
+      }
+  }
+}
