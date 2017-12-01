@@ -31,9 +31,9 @@
             "description": "retrieval method options (e.g. 'url')"
         },
 
-        "data": {
+        "rawData": {
             "type": ["string", "object", "array"],
-            "description": "raw data of the dataset if any"
+            "description": "raw data stored directly the dataset object if any"
         }
 
     },
