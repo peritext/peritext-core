@@ -10,7 +10,7 @@
             "description": "static thumbnail dataset id (uuid v4) for the resource",
             "pattern": "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}"
         },
-        "presentationData": {
+        "presentationDataset": {
             "type": "string",
             "description": "JSON presentation data"
         }
