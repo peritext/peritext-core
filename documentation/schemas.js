@@ -21,6 +21,7 @@ export default fromJS([
   require('../schemas/resourcesData/embed.json'),
   require('../schemas/resourcesData/glossary.json'),
   require('../schemas/resourcesData/image.json'),
+  require('../schemas/resourcesData/images-group.json'),
   require('../schemas/resourcesData/table.json'),
   require('../schemas/resourcesData/video.json'),
   require('../schemas/resourcesData/webpage.json'),
